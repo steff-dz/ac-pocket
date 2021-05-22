@@ -1,10 +1,12 @@
+import PageTitle from "../../components/PageTitle";
+
 const Home = () => {
   return (
     <>
-      <h1 className="text-6xl text-center mt-3">Pocket Crossing</h1>
+      <PageTitle text="Pocket Crossing" />
       <p className="text-2xl text-center mt-3 px-1.5">
         A helpful little app to checkout all of the villagers and other items in
-        the great came of Animal Crossing.
+        the great game of Animal Crossing.
       </p>
       <img
         className="mx-auto"
