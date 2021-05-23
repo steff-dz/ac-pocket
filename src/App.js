@@ -27,12 +27,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <header>
-<Navigation />
-</header>
-<main>
-<Home />
-</main> */
-}

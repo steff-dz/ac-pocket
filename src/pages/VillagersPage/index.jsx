@@ -9,19 +9,12 @@ const VillagersPage = () => {
     fetchCall("http://acnhapi.com/v1/villagers/", setVillagerData);
   }, []);
 
-  useEffect(() => {
-    if (villagerData) {
-      console.log("villagers are here");
-      //console.log(villagerData[0][1].name["name-USen"]);
-    }
-  });
-
   return (
     <>
       <PageTitle text="Villagers List" />
       <section className="mt-3 flex flex-wrap gap-2 justify-evenly">
         {villagerData &&
-          villagerData.map((el) => <Card key={el[0]} villData={el} />)}
+          villagerData.map((el) => <Card key={el[0]} villData={el[1]} />)}
       </section>
     </>
   );
