@@ -12,7 +12,7 @@ const VillagersPage = () => {
   return (
     <>
       <PageTitle text="Villagers List" />
-      <section className="mt-3 flex flex-wrap gap-2 justify-evenly">
+      <section className="mt-3 mx-36 flex flex-wrap gap-4 justify-evenly">
         {villagerData &&
           villagerData.map((el) => <Card key={el[0]} villData={el[1]} />)}
       </section>
