@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeaf } from "@fortawesome/free-solid-svg-icons";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
@@ -8,6 +10,11 @@ const Card = ({ villData }) => {
   const [toggleModal, setToggleModal] = useState(false);
   const leafIcon = <FontAwesomeIcon icon={faLeaf} color="#3ba14e" size="lg" />;
   const xIcon = <FontAwesomeIcon icon={faTimesCircle} size="2x" />;
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   return (
     <>
       <DetailsModal trigger={toggleModal} setTrigger={setToggleModal}>
@@ -34,7 +41,7 @@ const Card = ({ villData }) => {
           </button>
         </div>
       </DetailsModal>
-      <article className="relative shadow-lg w-80 h-64">
+      <article data-aos="fade-right" className="relative shadow-lg w-80 h-64">
         <span
           className="container inline-flex h-1/3 opacity-60 "
           style={{ backgroundColor: villData["bubble-color"] }}
