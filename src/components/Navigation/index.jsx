@@ -13,7 +13,10 @@ const Navigation = () => {
       >
         Villagers
       </NavLink>
-      <NavLink className="flex-initial text-2xl text-yellow font-bold" to="/">
+      <NavLink
+        className="flex-initial text-2xl text-yellow font-bold"
+        to="/fishnbugs"
+      >
         Fish & Bugs
       </NavLink>
     </nav>
