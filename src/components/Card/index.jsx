@@ -1,25 +1,40 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeaf } from "@fortawesome/free-solid-svg-icons";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import DetailsModal from "../DetailsModal";
 
 const Card = ({ villData }) => {
   const [toggleModal, setToggleModal] = useState(false);
   const leafIcon = <FontAwesomeIcon icon={faLeaf} color="#3ba14e" size="lg" />;
+  const xIcon = <FontAwesomeIcon icon={faTimesCircle} size="2x" />;
   return (
     <>
-      <article className="relative shadow-lg rounded-lg w-80 h-64">
-        {toggleModal && (
-          <DetailsModal
-            setToggleModal={setToggleModal}
-            name={villData.name["name-USen"]}
-            birthday={villData["birthday-string"]}
-            gender={villData.gender}
-            hobby={villData.hobby}
-            catchPhrase={villData["catch-phrase"]}
-            id={villData.id}
+      <DetailsModal trigger={toggleModal} setTrigger={setToggleModal}>
+        <div className="flex items-center mt-48 bg-white shadow-xl">
+          <img
+            className="h-72"
+            src={villData.image_uri}
+            alt="full photo of villager"
           />
-        )}
+
+          <ul className="list-disc list-inside p-8  text-xl tracking-wider h-72">
+            <h1 className="text-4xl">{villData.name["name-USen"]}</h1>
+            <li>ID: {villData.id}</li>
+            <li>Gender: {villData.gender}</li>
+            <li>Birthday: {villData["birthday-string"]}</li>
+            <li>Hobby: {villData.hobby}</li>
+            <li>Catch Phrase: "{villData["catch-phrase"]}"</li>
+          </ul>
+          <button
+            className="self-end p-2"
+            onClick={() => setToggleModal(false)}
+          >
+            {xIcon}
+          </button>
+        </div>
+      </DetailsModal>
+      <article className="relative shadow-lg w-80 h-64">
         <span
           className="container inline-flex h-1/3 opacity-60 "
           style={{ backgroundColor: villData["bubble-color"] }}

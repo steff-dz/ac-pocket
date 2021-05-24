@@ -1,24 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
-const DetailsModal = ({
-  setToggleModal,
-  name,
-  birthday,
-  gender,
-  hobby,
-  catchphrase,
-  id,
-}) => {
-  const xIcon = <FontAwesomeIcon icon={faTimesCircle} size="lg" />;
-  return (
-    <article
-      style={{ zIndex: "100" }}
-      className="absolute w-full h-full bg-brown z-10"
-    >
-      This will be a details modal for the villager
-      <button onClick={() => setToggleModal(false)}>{xIcon}</button>
-    </article>
+const DetailsModal = (props) => {
+  // const xIcon = <FontAwesomeIcon icon={faTimesCircle} size="lg" />
+  return props.trigger ? (
+    <section className="fixed bg-gray-300 bg-opacity-50 w-full h-screen top-0 z-50 flex flex-col items-center">
+      {props.children}
+    </section>
+  ) : (
+    ""
   );
 };
 
