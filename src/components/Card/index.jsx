@@ -17,8 +17,7 @@ const Card = ({ villData }) => {
             gender={villData.gender}
             hobby={villData.hobby}
             catchPhrase={villData["catch-phrase"]}
-            id={id}
-            bgColor={villData}
+            id={villData.id}
           />
         )}
         <span
