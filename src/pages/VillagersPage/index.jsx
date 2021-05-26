@@ -13,7 +13,7 @@ const VillagersPage = () => {
   return (
     <>
       <PageTitle text="Villagers List" />
-      <section className="mt-3 mx-24 sm:mx-36 flex flex-wrap gap-4 justify-evenly">
+      <section className="mt-3 mx-24 pb-40 sm:mx-36 flex flex-wrap gap-4 justify-evenly">
         {villagerData.length === 0 ? (
           <Loader />
         ) : (
