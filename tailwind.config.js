@@ -17,7 +17,13 @@ module.exports = {
       black: {
         DEFAULT: "#333",
       },
+      green: {
+        DEFAULT: "#3ba14e",
+      },
       gray: colors.trueGray,
+    },
+    animation: {
+      "spin-slow": "spin 2s linear infinite",
     },
   },
 };
