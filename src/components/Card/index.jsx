@@ -18,7 +18,7 @@ const Card = ({ villData }) => {
   return (
     <>
       <DetailsModal trigger={toggleModal} setTrigger={setToggleModal}>
-        <div className="flex items-center mt-48 bg-white shadow-xl">
+        <div className=" flex flex-col sm:flex-row items-center mt-7 sm:mt-48 bg-white shadow-xl">
           <img
             className="h-72"
             src={villData.image_uri}
