@@ -2,7 +2,7 @@ import PageTitle from "../../components/PageTitle";
 
 const Home = () => {
   return (
-    <main className="h-full">
+    <>
       <PageTitle text="Pocket Crossing" />
       <img
         className="mx-auto w-80 md:w-96"
@@ -13,7 +13,7 @@ const Home = () => {
         A helpful little app to checkout all of the villagers and other items in
         the great game of Animal Crossing.
       </p>
-    </main>
+    </>
   );
 };
 

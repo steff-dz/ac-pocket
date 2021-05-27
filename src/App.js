@@ -11,15 +11,17 @@ function App() {
     <>
       <Router>
         <Route>
-          <div className="bg-white relative h-screen">
-            <header>
+          <div className="bg-white relative min-h-screen border border-black flex flex-col items-center justify-center pt-2">
+            <header className="w-9/12">
               <Navigation />
             </header>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/villagers" component={VillagersPage} />
-              <Route exact path="/fishnbugs" component={FishBugsPage} />
-            </Switch>
+            <main className="">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/villagers" component={VillagersPage} />
+                <Route exact path="/fishnbugs" component={FishBugsPage} />
+              </Switch>
+            </main>
             <Footer />
           </div>
         </Route>

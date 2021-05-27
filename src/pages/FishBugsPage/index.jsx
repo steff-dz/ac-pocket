@@ -5,7 +5,7 @@ import useToggle from "../../hooks/useToggle";
 const FishBugsPage = () => {
   const [test, toggleTest] = useToggle(false);
   return (
-    <div className="flex flex-col items-center h-screen justify-center">
+    <div className="h-screen">
       <Loader />
       <h2 onClick={toggleTest}>{test ? "It is true!" : "It is false!"}</h2>
     </div>

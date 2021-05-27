@@ -78,3 +78,5 @@ const Card = ({ villData }) => {
 };
 
 export default Card;
+
+//data-aos="fade-right"
