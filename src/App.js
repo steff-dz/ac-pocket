@@ -11,19 +11,17 @@ function App() {
     <>
       <Router>
         <Route>
-          <div className="bg-white relative min-h-screen border border-black flex flex-col items-center justify-center pt-2">
-            <header className="w-9/12">
-              <Navigation />
-            </header>
-            <main className="">
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/villagers" component={VillagersPage} />
-                <Route exact path="/fishnbugs" component={FishBugsPage} />
-              </Switch>
-            </main>
-            <Footer />
-          </div>
+          <header className="w-9/12 mx-auto mt-4">
+            <Navigation />
+          </header>
+          <main className="min-h-screen">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/villagers" component={VillagersPage} />
+              <Route exact path="/fishnbugs" component={FishBugsPage} />
+            </Switch>
+          </main>
+          <Footer />
         </Route>
       </Router>
     </>
@@ -31,3 +29,4 @@ function App() {
 }
 
 export default App;
+//bg-white relative min-h-screen border border-black flex flex-col items-center justify-center pt-2
