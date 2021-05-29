@@ -11,7 +11,7 @@ function App() {
     <>
       <Router>
         <Route>
-          <header className="w-9/12 mx-auto mt-4">
+          <header className="w-9/12 mx-auto mt-2">
             <Navigation />
           </header>
           <main className="min-h-screen">
