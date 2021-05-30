@@ -7,12 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 
 const VillagersPage = () => {
-  let villArray = [];
   const styles = {
-    // width: "50px",
-    // height: "50px",
-    // backgroundColor: "red",
-    // borderRadius: "100%",
     right: "5%",
     bottom: "5%",
     position: "fixed",
@@ -24,13 +19,17 @@ const VillagersPage = () => {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error } = useSWR("http://acnhapi.com/v1/villagers/", fetcher);
-
-  if (villArray.length === 0) {
-    villArray = Object.entries(data);
-  }
-
-  if (error) return <div>Failed to Load </div>;
   if (!data) return <Loader />;
+  if (error) return <div>Failed to Load </div>;
+
+  const villArray = Object.entries(data);
+
+  function handleTopScroll() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
 
   return (
     <>
@@ -39,7 +38,9 @@ const VillagersPage = () => {
         {villArray.map((el) => (
           <Card key={el[0]} villData={el[1]} />
         ))}
-        <div style={styles}>{arrowUp}</div>
+        <div href="title" style={styles} onClick={() => handleTopScroll()}>
+          {arrowUp}
+        </div>
       </section>
     </>
   );
