@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,7 +21,7 @@ const Card = ({ villData }) => {
       <DetailsModal trigger={displayModal}>
         <div className=" flex flex-col sm:flex-row items-center mt-7 sm:mt-48 bg-white shadow-xl">
           <img
-            className="h-72"
+            className=" mt-5 sm:mt-0 h-72"
             src={villData.image_uri}
             alt="full photo of villager"
           />

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import useSWR from "swr";
 import PageTitle from "../../components/PageTitle";
 import Card from "../../components/Card";
@@ -7,12 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 
 const VillagersPage = () => {
-  const styles = {
-    right: "5%",
-    bottom: "5%",
-    position: "fixed",
-  };
-
   const arrowUp = (
     <FontAwesomeIcon icon={faArrowCircleUp} size="3x" color="#c48d3f" />
   );
@@ -38,9 +32,13 @@ const VillagersPage = () => {
         {villArray.map((el) => (
           <Card key={el[0]} villData={el[1]} />
         ))}
-        <div href="title" style={styles} onClick={() => handleTopScroll()}>
+        <button
+          href="title"
+          className="fixed bottom-16 right-4 sm:right-16"
+          onClick={() => handleTopScroll()}
+        >
           {arrowUp}
-        </div>
+        </button>
       </section>
     </>
   );
