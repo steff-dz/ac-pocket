@@ -11,10 +11,10 @@ function App() {
     <>
       <Router>
         <Route>
-          <header className="w-9/12 mx-auto mt-2">
+          <header className=" w-full md:w-9/12 mx-auto mt-2">
             <Navigation />
           </header>
-          <main className="min-h-screen">
+          <main className="min-h-screen relative">
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/villagers" component={VillagersPage} />

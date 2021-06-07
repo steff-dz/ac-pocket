@@ -3,11 +3,11 @@ import { NavLink, useLocation } from "react-router-dom";
 import Search from "../Search";
 
 const Navigation = () => {
-  let location = useLocation();
+  //let location = useLocation();
 
-  useEffect(() => {
-    console.log(location.pathname);
-  }, [location]);
+  // useEffect(() => {
+  //   console.log(location.pathname);
+  // }, [location]);
   return (
     <nav className="flex justify-evenly w-full bg-brown h-16 items-center rounded-md shadow-md border">
       <div className="w-full flex justify-evenly">
@@ -27,7 +27,6 @@ const Navigation = () => {
           Fish & Bugs
         </NavLink>
       </div>
-      <Search />
     </nav>
   );
 };

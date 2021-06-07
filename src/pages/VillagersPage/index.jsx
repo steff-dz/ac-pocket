@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import useSWR from "swr";
+import Loader from "../../components/Loader";
 import PageTitle from "../../components/PageTitle";
 import Card from "../../components/Card";
-import Loader from "../../components/Loader";
+import Search from "../../components/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 
 const VillagersPage = () => {
+  const [query, setQuery] = useState(null);
+
+  useEffect(() => {
+    if (query) {
+      console.log(query);
+    } else {
+      console.log("its empty or null");
+    }
+  }, [query]);
   const arrowUp = (
     <FontAwesomeIcon icon={faArrowCircleUp} size="3x" color="#c48d3f" />
   );
@@ -28,6 +38,7 @@ const VillagersPage = () => {
   return (
     <>
       <PageTitle text="Villagers List" />
+      <Search setQuery={setQuery} />
       <section className="mt-12 mx-24 sm:mx-36 flex flex-wrap gap-3 justify-evenly">
         {villArray.map((el) => (
           <Card key={el[0]} villData={el[1]} />
