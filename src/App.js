@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import VillagersPage from "./pages/VillagersPage";
+import MemoryGame from "./pages/MemoryGame";
 import FishBugsPage from "./pages/FishBugsPage";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/villagers" component={VillagersPage} />
+              <Route exact path="/memorygame" component={MemoryGame} />
               <Route exact path="/fishnbugs" component={FishBugsPage} />
             </Switch>
           </main>

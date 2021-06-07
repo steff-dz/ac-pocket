@@ -22,6 +22,12 @@ const Navigation = () => {
         </NavLink>
         <NavLink
           className="flex-initial text-2xl text-yellow font-bold"
+          to="/memorygame"
+        >
+          Villager Memory Game
+        </NavLink>
+        <NavLink
+          className="flex-initial text-2xl text-yellow font-bold"
           to="/fishnbugs"
         >
           Fish & Bugs

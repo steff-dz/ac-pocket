@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import useSWR from "swr";
 import Loader from "../../components/Loader";
 import PageTitle from "../../components/PageTitle";
@@ -12,17 +12,20 @@ const VillagersPage = () => {
 
   useEffect(() => {
     if (query) {
-      console.log(query);
+      console.log("from the use Effect:", query);
+      //const thisOne = villArray.find((el) => el[1].name["name-USen"] === query);
+      //console.log(thisOne);
     } else {
       console.log("its empty or null");
     }
   }, [query]);
+
   const arrowUp = (
     <FontAwesomeIcon icon={faArrowCircleUp} size="3x" color="#c48d3f" />
   );
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error } = useSWR("http://acnhapi.com/v1/villagers/", fetcher);
+  const { data, error } = useSWR(`http://acnhapi.com/v1/villagers/`, fetcher);
   if (!data) return <Loader />;
   if (error) return <div>Failed to Load </div>;
 
@@ -38,7 +41,6 @@ const VillagersPage = () => {
   return (
     <>
       <PageTitle text="Villagers List" />
-      <Search setQuery={setQuery} />
       <section className="mt-12 mx-24 sm:mx-36 flex flex-wrap gap-3 justify-evenly">
         {villArray.map((el) => (
           <Card key={el[0]} villData={el[1]} />
