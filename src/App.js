@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { VillagerList } from "./utils/VillagerContext";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -10,22 +11,33 @@ import FishBugsPage from "./pages/FishBugsPage";
 function App() {
   return (
     <>
-      <Router>
-        <Route>
-          <header className=" w-full md:w-9/12 mx-auto mt-2">
-            <Navigation />
-          </header>
-          <main className="min-h-screen relative">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/villagers" component={VillagersPage} />
-              <Route exact path="/memorygame" component={MemoryGame} />
-              <Route exact path="/fishnbugs" component={FishBugsPage} />
-            </Switch>
-          </main>
-          <Footer />
-        </Route>
-      </Router>
+      <VillagerList>
+        <Router>
+          <Route>
+            <header className=" w-full md:w-9/12 mx-auto mt-2">
+              <Navigation />
+            </header>
+
+            <main className="min-h-screen relative">
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route exact path="/villagers">
+                  <VillagersPage />
+                </Route>
+                <Route exact path="/memorygame">
+                  <MemoryGame />
+                </Route>
+                <Route exact path="/fishnbugs">
+                  <FishBugsPage />
+                </Route>
+              </Switch>
+            </main>
+            <Footer />
+          </Route>
+        </Router>
+      </VillagerList>
     </>
   );
 }
